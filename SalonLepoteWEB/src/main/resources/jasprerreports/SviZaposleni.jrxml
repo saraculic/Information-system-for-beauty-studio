@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SviZaposleni" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c911f039-58c2-4794-a56e-6e395a2ee9d5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="datum" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ime" class="java.lang.String"/>
+	<field name="prezime" class="java.lang.String"/>
+	<field name="tel" class="java.lang.String"/>
+	<field name="plata" class="java.lang.Integer"/>
+	<variable name="ukupnoZaposlenih" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ime}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="0" width="370" height="45" forecolor="#96638F" uuid="cb0caa9e-be40-445e-b28c-84a62520f530"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bell MT" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Svi zaposleni radnici salona]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="62" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="70" y="0" width="100" height="20" uuid="25acd57f-10fd-41c9-916a-2bc397b2b3dc"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="60" height="20" uuid="208582ea-bf13-4190-93a6-fdd15ab2d9c1"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<text><![CDATA[Datum: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="32" width="130" height="30" backcolor="#D1B2D0" uuid="2a6418f1-08ed-4ac8-a475-b462ba2f9fcc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64962b2b-8eee-4b99-a1e8-c00fec7ac860"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB" size="14"/>
+				</textElement>
+				<text><![CDATA[Ime]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="32" width="130" height="30" backcolor="#D1B2D0" uuid="7fcf898b-8289-4503-9289-d80c7b30c5b0"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB" size="14"/>
+				</textElement>
+				<text><![CDATA[Prezime]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="260" y="32" width="130" height="30" backcolor="#D1B2D0" uuid="426cdf07-0ba3-459f-8096-bfc3bd14a9c8"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB" size="14"/>
+				</textElement>
+				<text><![CDATA[Telefon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="390" y="32" width="130" height="30" backcolor="#D1B2D0" uuid="8724ec75-7cc1-4914-8c32-620393017d00"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB" size="14"/>
+				</textElement>
+				<text><![CDATA[Plata]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="10" y="0" width="130" height="30" backcolor="#EDE1EC" uuid="c94bf34d-dd88-41e2-bd95-2cfb6f16be09">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64962b2b-8eee-4b99-a1e8-c00fec7ac860"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="140" y="0" width="130" height="30" backcolor="#EDE1EC" uuid="f1b52359-82d9-4ff7-ad75-e7c43f5a778f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{prezime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="260" y="0" width="130" height="30" backcolor="#EDE1EC" uuid="cce3a1ae-5275-4444-a223-a4e86d7a1869">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="390" y="0" width="130" height="30" backcolor="#EDE1EC" uuid="2b61c40d-6b19-4b01-9f0c-b2ddfbc6fcb0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{plata}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="440" y="3" width="100" height="22" uuid="7d9ad5be-af65-4fb3-b2ee-c43d031ebc65"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="-2" width="120" height="22" uuid="c76763d8-9d36-477b-9210-90e455ebc945"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<text><![CDATA[Ukupno zaposlenih:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="0" width="140" height="20" uuid="564f8faf-ea98-47ef-811b-6e9c494d38c8"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{ukupnoZaposlenih}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

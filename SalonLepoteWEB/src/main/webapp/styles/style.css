@@ -1,0 +1,59 @@
+.sidenav {
+	height: 100%; /* Full-height: remove this if you want "auto" height */
+	width: 250px; /* Set the width of the sidebar */
+	position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+	z-index: 1; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+	/* Disable horizontal scroll */
+	padding-top: 20px;
+	overflow-x: hidden;
+}
+
+.main {
+	margin-left: 250px; /* Same as the width of the sidebar */
+	padding: 0px 10px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+body {
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-family: 'Vibur', cursive;
+	/*   the main font */
+	font-family: 'Abel', sans-serif;
+	opacity: .95;
+}
+
+.vertical-menu {
+	width: 200px;
+	height: 150px;
+	overflow-y: auto;
+}
+
+.vertical-menu a {
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.vertical-menu a:hover {
+	background-color: #ccc;
+}
+
+.vertical-menu a.active {
+	background-color: #04AA6D;
+	color: white;
+}

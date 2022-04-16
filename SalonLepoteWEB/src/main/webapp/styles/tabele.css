@@ -1,0 +1,46 @@
+body {
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-family: 'Vibur', cursive;
+	/*   the main font */
+	font-family: 'Abel', sans-serif;
+	opacity: .95;
+	/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
+
+table {
+	border-collapse: collapse;
+	width: 85%;
+	margin-left: 100px;
+	font-family: 'Segoe UI Symbol';
+	font-size: 25px;
+	text-align: center;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+	text-align: center;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #A96AA5;
+	color: white;
+}
+
+tr:hover {
+	background-color: rgb(236, 240, 238);
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Lucida Handwriting';
+	font-size: 50px;
+	color: #A96AA5;
+}

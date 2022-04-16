@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/style.css">
+</head>
+<body>
+<div class="sidenav">
+  <a href="/SalonLepote/onama.jsp">O nama</a><br>
+  <a href="/SalonLepote/auth/getSveUsluge">Usluge koje salon pruža</a><br>
+  <a href="/SalonLepote/kontakt.jsp">Kontakt</a><br>
+  <security:authorize access="hasRole('Administrator')">
+	<a href="/SalonLepote/administrator/sviZaposleni">Prikaz svih zaposlenih</a><br>
+	<a href="/SalonLepote/unosZaposlenog.jsp">Unos novog zaposlenog</a><br>
+	<a href="/SalonLepote/azuriranjeZaposlenog.jsp">Azuriranje podataka o zaposlenom</a><br>
+	<a href="/SalonLepote/brisanjeZaposlenog.jsp">Brisanje zaposlenog</a><br>
+	<a href="/SalonLepote/administrator/getUslugeIZaposleni">Dodavanje slobodnih termina</a><br>
+	<a href="/SalonLepote/reports/SviZaposleni.pdf">Svi zaposleni - izvestaj</a><br>
+	<a href="/SalonLepote/auth/logout">Odjava</a><br>
+</security:authorize>
+ 
+ <security:authorize access="hasRole('Zaposlen')">
+ 	<a href="/SalonLepote/zaposlen/prikazPlate">Prikaz plate</a><br>
+ </security:authorize>.
+ 
+ <security:authorize access="hasRole('Korisnik')">
+ 	<a href="/SalonLepote/musterija/ostavljanjeKomentara">Napisi komentar</a><br>
+ </security:authorize>
+
+</div>
+<div class="main">
+	<img src="${pageContext.request.contextPath}/slike/1.jpg" class="center"/>
+<div class="center" style="font-size:25px; text-align:center;">
+Dobrodosli 
+<security:authorize access="isAuthenticated()">
+     <security:authentication property="principal.username" /> 
+</security:authorize>
+ 
+ <security:authorize access="hasRole('Korisnik')">
+ <c:if test="${! empty komentar }">
+ 	<form action="/SalonLepote/musterija/saveKomentar" method="post">
+ 		Napisi komentar: <br>
+		 	<input type="text" name="kom">
+		 	<input type="submit" value="OK">
+ 	</form>
+ 	 </c:if>
+ 	<c:if test="${! empty ostavljenKomentar }">
+ 		${ostavljenKomentar }
+ 	</c:if>
+ </security:authorize>
+ 
+ 
+  <security:authorize access="hasRole('Zaposlen')">
+  <br>
+  	<c:if test="${! empty plata }">
+  		Tvoja plata je ${plata } RSD.
+  	</c:if>
+ </security:authorize>
+
+</div>
+</div>
+</body>
+</html>
